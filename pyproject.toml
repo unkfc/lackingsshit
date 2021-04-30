@@ -1,0 +1,35 @@
+[tool.black]
+line-length = 88
+target-version = ['py37']
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py
+)
+'''
+
+[tool.pylint]
+    [tool.pylint.master]
+    max-line-length = 88
+    disable = '''
+    missing-module-docstring,
+    missing-class-docstring,
+    missing-function-docstring,
+    arguments-differ,
+    no-member,
+    duplicate-code,
+    attribute-defined-outside-init,
+    '''
